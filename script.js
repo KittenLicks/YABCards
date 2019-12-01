@@ -100,6 +100,25 @@ function updateImage()
 		const reader = new FileReader();
 	    reader.onload = function(e) { 
 	    	objectionImage.src = e.target.result; 
+
+	    	objectionImage.onload = function(){
+		    	console.log(objectionImage.width)
+				if (objectionImage.width > 200){
+					document.getElementById('objectionOffsetX').setAttribute('max', objectionImage.width)
+				}
+				else
+				{
+
+				}
+				if (objectionImage.height > 200)
+				{
+					document.getElementById('objectionOffsetY').setAttribute('max', objectionImage.height)
+				}
+				else
+				{
+
+				}
+			}
 	    }; 
 
     	reader.readAsDataURL(file);

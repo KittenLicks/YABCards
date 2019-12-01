@@ -1,11 +1,3 @@
-var gif = new GIF({
-  workers: 2,
-  quality: 10,
-  repeat:0,
-  height:165,
-  width:400
-});
-
 let edit = document.getElementById('editcanvas')
 let ectx = edit.getContext('2d')
 
@@ -22,6 +14,14 @@ function loadSplash()
 }
 function makeGif()
 {
+	var gif = new GIF({
+	  workers: 2,
+	  quality: 10,
+	  repeat:0,
+	  height:165,
+	  width:400
+	});
+
 	for (i in splash)
 	{
 		//Start with the background
@@ -63,7 +63,7 @@ function makeGif()
 		mid = object.width/2 - octx.measureText(text).width/2
 		ectx.fillText(text,mid + textBottomOffset, object.height - objectoffset / 4)
 
-		addFrame(ectx,100)
+		addFrame(ectx,100, gif)
 	}
 
 	gif.on('finished', function(blob){
@@ -75,7 +75,7 @@ function saveImage(blob)
 {	
 	saveBlobAsFile(blob,"objection.gif");
 }
-function addFrame(c, delay){
+function addFrame(c, delay, gif){
 	gif.addFrame(c,{copy:true, delay:delay})
 }
 
