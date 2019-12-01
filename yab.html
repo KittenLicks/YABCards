@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>You're All Babs</title>
+	<script src="gif.js"></script>	
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Ability Card Generator</h1>
+	<div class="side">
+		<canvas id="card" width="1200" height="800"></canvas>	
+	</div>
+	<div class="side buff">
+		<label for="top">Title:</label><input type="text" id="top">
+		<label for="middle">Description:</label><textarea id="middle"></textarea>
+		<label for="bottom">Details:</label><input type="text" id="bottom">
+	</div>
+	<div class="clearfix"></div>
+
+	<h1>Objection Generator</h1>
+
+	<div class="side">
+		<canvas id="objectionexample" width="400" height="165"></canvas>		
+	</div>
+	<div class="side">
+		<label for="top">Top:</label><input type="text" id="objectiontop"> <input type="range" min="-200" max="200" value="0" class="slider" id="topSlider">
+		<label for="bottom">Bottom:</label><input type="text" id="objectionbottom"> <input type="range" min="-200" max="200" value="0" class="slider" id="bottomSlider">
+		<label for="img">Image:</label><input type="file" onchange="updateImage()" id="chooseImage">
+		<div class="ranges">				
+			<div class="part"><label>X-Offset</label><input type="range" min="-200" max="200" value="0" class="slider" id="objectionOffsetX"></div>
+			<div class="part"><label>Y-Offset</label><input type="range" min="-200" max="200" value="0" class="slider" id="objectionOffsetY"></div>
+			<div class="part"><label>Zoom</label><input type="range" min="1" max="40" value="10" step="1" class="slider" id="objectionOffsetZ"></div>
+		</div>
+		<div class="clearfix"></div>
+		<button onclick="makeGif()">Save</button>
+	</div>
+
+	<img id="resultimg">
+
+	<canvas id="editcanvas" width="400" height="165"></canvas>
+
+	<script src="drawing.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

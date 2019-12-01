@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Calligraffitti|Open+Sans|Roboto:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
 
 body, html
 {
@@ -15,6 +16,11 @@ h1
 	color:white;
 	font-family:"Open Sans";
 	text-align:center;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 .side
 {
@@ -53,4 +59,47 @@ input, textarea
 		padding-left:69px;
 		padding-top:0;
 	}
+}
+#objectionexample
+{
+	width: 80%;
+	margin:0 auto;
+	display:block;
+}
+#editcanvas
+{
+	display:none;
+}
+#chooseImage
+{
+	padding: 10px;
+	color:white;
+}
+#resultimg
+{
+	display:none;
+}
+button
+{
+	background:#b9bbbe;
+	outline:none;
+	border:none;
+	padding:10px 20px;
+	font-size: 15px;
+	cursor:pointer;
+	color:black;
+	font-family:"Open Sans";
+	margin: 10px;
+}
+button:hover
+{
+	background:white;
+}
+.part
+{
+	float:left;
+}
+.part label
+{
+	text-align:center;
 }
